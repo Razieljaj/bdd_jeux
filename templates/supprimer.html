@@ -1,0 +1,44 @@
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="../static/images/favicon.png">
+    <link href="../static/style.css" rel="stylesheet"/>
+    <title>Steam</title>
+<body>
+    <a href="../" class="menu">Menu</a>
+    <h1>Bibliothèque</h1>
+        <p>Veuillez séléctionner le tri souhaité : (Si vous ne voulez pas trier, cliquez simplement sur Chercher)</p>
+        <form action="" method="POST">
+        <!-- Ce formulaire permet de trier les jeux -->
+            <input type="radio" name="tri" value="tri_nom"><label>Nom</label>
+            <input type="radio" name="tri" value="tri_date"><label>Date</label>
+            <input type="radio" name="tri" value="tri_type"><label>Type</label>
+            <input type="radio" name="tri" value="tri_statut"><label>Statut</label>
+            <input type="submit" value="Chercher" class="chercher">
+        </form>
+    {% if jeux is not none %}
+        {% if jeux|length == 0 %}
+        <p>Aucun jeu ne correspond à la recherche.</p>
+    {% else %}
+        <p>Voici les jeux trouvés :</p>
+        <ul>
+        {% for jeu in jeux %}
+                    
+                    <!-- L'image de chaque jeu de la base de données est cliquable et affichée -->
+                    <li style="visibility: hidden;"><a  href="/info-jeu?id={{jeu[0]}}" title="Ce jeu est un {{ jeu[11] }}, il est {{ jeu[9] }}">{{ jeu[1] }}�</li>
+                    <img src="/static/images/{{jeu[7]}}" /></a>
+                    
+                    <!-- Formulaire pour supprimer un jeu -->
+                    <form action="/supprimer/jeu" method="POST" style="display:inline;">
+                        <input type="hidden" name="jeu_id" value="{{ jeu[0] }}">
+                        <input type="submit" value="Supprimer" class="supprimer">
+                    </form>
+        {% endfor %}
+        </ul>
+    {% endif %}
+{% endif %}
+
+    </body>
+</html>

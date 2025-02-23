@@ -1,0 +1,90 @@
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="../static/images/favicon.png">
+    <link href="../static/style.css" rel="stylesheet" />
+    <title>Steam</title>
+<body>
+
+    <a href="/" class="menu">Menu</a>
+    <h1>Ajouter un jeu</h1>
+    
+    <!-- Demande le titre du jeu à l'aide d'une zone de texte-->
+    <form action="" method="POST">
+        <label>Titre :</label>
+        <input type="text" name="titre" required="required"><br><br>
+
+        <!-- Demande le prix du jeu à l'aide d'une zone de texte -->
+        <label>Prix :</label>
+        <input type="integer" name="prix" required="required"><br><br>
+        
+        <!-- Demande la date de sortie du jeu à l'aide d'un calendrier -->
+        <label>Date :</label>
+        <input type="date" name="date" required="required"><br><br>
+        
+        <!-- Demande le statut du jeu à l'aide d'un menu déroulant -->
+        <label>Quel est le statut du jeu ?</label>
+        <select name="statut" required="required"><br><br>
+            <option value="">--Choisissez une option--</option>
+            <option value="1">Installé</option>
+            <option value="2">En cours d'installation</option>
+            <option value="3">Mise à jour</option>
+            <option value="4">Désinstallé</option>
+        </select>
+        <br><br>
+        
+        <!-- Demande le type du jeu à l'aide d'un menu déroulant -->
+        <label>Quel est le type du jeu ?</label>
+        <select name="type" required="required"><br><br>
+            <option value="">--Choisissez une option--</option>
+            <option value="1">TPS</option>
+            <option value="2">Survival / construction</option>
+            <option value="3">MMO-RPG</option>
+            <option value="4">Battle royale</option>
+            <option value="5">Stratégie</option>
+            <option value="6">FPS</option>
+            <option value="7">Simulation pilotage</option>
+            <option value="8">Pilotage</option>
+            <option value="9">Escape game</option>
+            <option value="10">Horror</option>
+            <option value="11">Construction / gestion</option>
+            <option value="12">Exploration / adventure</option>
+            <option value="13">Action / aventure / RP</option>
+        </select>
+        <br><br>
+        
+        <!-- Demande le développeur du jeu à l'aide d'un menu déroulant -->
+        <label>Qui a développé le jeu ?</label>
+        <select name="developpeur" required="required"><br><br>
+            <option value="">--Choisissez une option--</option>
+            <option value="1">inconnu</option>
+            <option value="2">arrow head</option>
+            <option value="3">coffe stains studio</option>
+            <option value="4">Axolot games</option>
+            <option value="5">valve</option>
+            <option value="6">Respawn Entertainment</option>
+            <option value="7">Eagle Dynamics</option>
+            <option value="8">Epic-game</option>
+            <option value="9">Zekers</option>
+            <option value="10">Dani</option>
+            <option value="11">Starry-studios</option>
+            <option value="12">Mob-Entertainment</option>
+            <option value="13">Pubg-studio</option>
+            <option value="14">the sims studios</option>
+            <option value="15">Next studios</option>
+            <option value="16">Landfall</option>
+            <option value="17">Trion world</option>
+            <option value="18">Ganjin</option>
+            <option value="19">Bohemia Interactive</option>
+            <option value="20">Ubisoft</option>
+            <option value="21">Rockstar</option>
+        </select>
+        <br><br>
+
+        <!-- Bouton pour envoyer le résultat et ajouter le jeu -->
+        <input type="submit" name="ajouter" class="boton-elegante">
+    </form>
+    </body>
+</html>

@@ -1,0 +1,37 @@
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="../static/images/favicon.png">
+    <link href="../static/style.css" rel="stylesheet" />
+    <title>Steam</title>
+<body>
+    <a href="../" class="menu">Menu</a>
+    <h1>Chercher des Jeux</h1>
+
+    <form action="" method="POST" class ="form">
+    <p>
+    <label for="nom">Saisir un nom : </label>
+    <input type="text" name="nom" id="nom" required>
+    <input type="submit" value="Chercher">
+    </p>
+    </form>
+    <!-- Dès que l'utilisateur clique sur Chercher, les jeux correspondants ( si il y en a ) s'affichent sous la forme d'une image cliquable -->
+	{% if jeux is not none %}
+		{% if jeux|length == 0 %}
+			<p>Aucun jeu ne correspond à la recherche.</p>
+		{% else %}
+			<p>Voici les jeux trouvés :</p>
+			<ul>
+			{% for jeu in jeux %}
+            <li style="visibility: hidden;"><a  href="/info-jeu?id={{jeu[0]}}" title="Ce jeu est un {{ jeu[11] }}, il est {{ jeu[9] }}">{{ jeu[1] }}�</li>
+						<img src="/static/images/{{jeu[7]}}" /></a>	
+
+			{% endfor %}
+			</ul>
+		{% endif %}
+	{% endif %}
+
+    </body>
+</html>

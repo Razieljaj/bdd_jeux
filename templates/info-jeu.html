@@ -1,0 +1,26 @@
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="../static/images/favicon.png">
+    <link href="../static/style.css" rel="stylesheet" />
+    <title>Steam</title>
+<body>
+    <!-- Cette page affiche les informations relatives au jeu sur lequel l'utilisateur à cliqué -->
+    <a href="/">Menu</a>
+    <h1>{{jeux[0][1]}}</h1>
+
+    <!-- La fin du lien vers l'image est stockée dans la base de données -->
+    <img src="/static/images/{{jeux[0][7]}}" class="img_info_jeu"/>	
+    
+    <div class="container">
+    <p class="info prix">Prix: {{jeux[0][2]}}</p>
+    <p class="info date-sortie">Date de sortie: {{jeux[0][3]}}</p>
+    <p class="info statut">Statut: {{jeux[0][9]}}</p>
+    <p class="info genre" title="Inventeur: {{jeux[0][12]}} en {{jeux[0][13]}}">Genre: {{jeux[0][11]}}</p>
+    <p class="info studio" title="Patron: {{jeux[0][16]}} Entreprise crée en: {{jeux[0][17]}}">Studio: {{jeux[0][15]}}</p>
+    </div>
+
+    </body>
+</html>
